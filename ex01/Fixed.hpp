@@ -6,11 +6,12 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:12:54 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/08/09 19:47:57 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/08/09 20:18:43 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+#include <iostream>
 
 class Fixed
 
@@ -20,9 +21,15 @@ class Fixed
 		static const int	_fractional_bits_number = 8;
 	public:
 		Fixed(void);
+		Fixed(int const value);
+		Fixed(float const value);
 		Fixed(const Fixed &old);
 		Fixed& operator=(Fixed const &old);
 		~Fixed(void);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
+
+std::ostream&	operator<<(std::ostream &out, Fixed const &n);
