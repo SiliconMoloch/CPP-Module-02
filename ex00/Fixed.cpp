@@ -6,45 +6,43 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:19:34 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/08/09 19:47:45 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:54:34 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-using std::cout;
-using std::endl;
 
 Fixed::Fixed(void)
 
 {
-	cout << "Default constructor called" << endl;
+	std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
 }
 
 Fixed::Fixed(const Fixed &old)
 
 {
-	cout << "Copy constructor called" << endl;
+	std::cout << "Copy constructor called" << std::endl;
 	this->_value = old.getRawBits();
 }
 
 Fixed&	Fixed::operator=(Fixed const &old)
 
 {
-	cout << "Copy assignment operator called" << endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 
 	if (this != &old)
 		this->_value = old.getRawBits();
 	return *this;
 }
 
-Fixed::~Fixed(void) { cout << "Destructor called" << endl ;}
+Fixed::~Fixed(void) { std::cout << "Destructor called" << std::endl ;}
 
 int	Fixed::getRawBits(void) const
 
 {
-	cout << "getRawBits member function called" << endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 

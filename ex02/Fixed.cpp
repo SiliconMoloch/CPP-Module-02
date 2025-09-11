@@ -6,47 +6,40 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:19:34 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/09/08 19:08:50 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:06:07 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 #include <cmath>
 
 Fixed::Fixed(void)
 
 {
-	std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
 }
 
 Fixed::Fixed(int const value)
 
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_value = value << _fractional_bits_number;
 }
 
 Fixed::Fixed(float const value)
 
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(value * (1 << _fractional_bits_number));
 }
 
 Fixed::Fixed(const Fixed &old)
 
 {
-	std::cout << "Copy constructor called" << std::endl;
 	this->_value = old._value;
 }
 
 Fixed&	Fixed::operator=(Fixed const &old)
 
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-
 	if (this != &old)
 		this->_value = old.getRawBits();
 	return (*this);
@@ -86,16 +79,16 @@ Fixed	Fixed::operator--(int)
 	{ const Fixed return_value = *this; --_value; return (return_value) ;}
 
 Fixed&			Fixed::min(Fixed& a, Fixed& b)
-		{ return (a.getRawBits() > b.getRawBits() ? b : a); }
+		{ return (a < b ? a : b); }
 const Fixed&	Fixed::min(const Fixed& a, const Fixed& b)
-		{ return (a.getRawBits() > b.getRawBits() ? b : a); }
+		{ return (a < b ? a : b); }
 
 Fixed&			Fixed::max(Fixed& a, Fixed& b)
-		{ return (a.getRawBits() < b.getRawBits() ? b : a); }
+		{ return (a > b ? a : b); }
 const Fixed&	Fixed::max(const Fixed& a, const Fixed& b)
-		{ return (a.getRawBits() < b.getRawBits() ? b : a); }
+		{ return (a > b ? a : b); }
 
-Fixed::~Fixed(void) { std::cout << "Destructor called" << std::endl ;}
+Fixed::~Fixed(void) {}
 
 int	Fixed::getRawBits(void) const
 

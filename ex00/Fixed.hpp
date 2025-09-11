@@ -6,11 +6,12 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:12:54 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/08/09 19:47:57 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:53:24 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 class Fixed
 
@@ -26,3 +27,5 @@ class Fixed
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
+
+#endif

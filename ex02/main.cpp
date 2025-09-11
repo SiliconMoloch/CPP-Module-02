@@ -6,12 +6,11 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:11:01 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/09/08 19:09:17 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:03:52 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 int	main(void)
 

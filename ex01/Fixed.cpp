@@ -6,55 +6,52 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:19:34 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/08/09 21:18:22 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/11 13:59:35 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 #include <cmath>
-using std::cout;
-using std::endl;
 
 Fixed::Fixed(void)
 
 {
-	cout << "Default constructor called" << endl;
+	std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
 }
 
 Fixed::Fixed(int const value)
 
 {
-	cout << "Int constructor called" << endl;
+	std::cout << "Int constructor called" << std::endl;
 	this->_value = value << _fractional_bits_number;
 }
 
 Fixed::Fixed(float const value)
 
 {
-	cout << "Float constructor called" << endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(value * (1 << _fractional_bits_number));
 }
 
 Fixed::Fixed(const Fixed &old)
 
 {
-	cout << "Copy constructor called" << endl;
+	std::cout << "Copy constructor called" << std::endl;
 	this->_value = old._value;
 }
 
 Fixed&	Fixed::operator=(Fixed const &old)
 
 {
-	cout << "Copy assignment operator called" << endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 
 	if (this != &old)
-		this->_value = old.getRawBits();
+		this->_value = old._value;
 	return *this;
 }
 
-Fixed::~Fixed(void) { cout << "Destructor called" << endl ;}
+Fixed::~Fixed(void) { std::cout << "Destructor called" << std::endl ;}
 
 int	Fixed::getRawBits(void) const
 

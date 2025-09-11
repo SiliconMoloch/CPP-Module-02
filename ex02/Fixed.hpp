@@ -6,13 +6,12 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:12:54 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/09/08 19:09:05 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/11 14:03:48 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
-#define EPSILON 0.00390625f
 #include <iostream>
 
 class Fixed
