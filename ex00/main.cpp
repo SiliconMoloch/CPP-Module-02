@@ -6,14 +6,12 @@
 /*   By: yabokhar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 16:11:01 by yabokhar          #+#    #+#             */
-/*   Updated: 2025/08/09 16:15:26 by yabokhar         ###   ########.fr       */
+/*   Updated: 2025/09/22 16:08:40 by yabokhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-using std::cout;
-using std::endl;
 
 int	main(void)
 
@@ -24,9 +22,9 @@ int	main(void)
 
 	c = b;
 
-	cout << a.getRawBits() << endl;
-	cout << b.getRawBits() << endl;
-	cout << c.getRawBits() << endl;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	
 	return (0);
 }
